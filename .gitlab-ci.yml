@@ -1,0 +1,24 @@
+lint:
+  image: node:9
+  script:
+   - npm install
+   - npm run lint
+
+unit test node9: &unit
+  image: node:9
+  script:
+   - npm install
+   - npm test
+
+unit test node8:
+  <<: *unit
+  image: node:8-alpine
+unit test node7:
+  <<: *unit
+  image: node:7-alpine
+unit test node6:
+  <<: *unit
+  image: node:6-alpine
+unit test node4:
+  <<: *unit
+  image: node:4-alpine
